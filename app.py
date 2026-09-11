@@ -683,11 +683,8 @@ def reports():
         land_types=land_types
     )
 
-# Start Flask
+create_database()
+import_csv_data()
+
 if __name__ == "__main__":
-
-    create_database()
-
-    import_csv_data()
-
     app.run(debug=True)
