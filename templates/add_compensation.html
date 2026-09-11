@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Compensation - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+        <a href="/projects">📁 Projects</a>
+        <a href="/land">🗺️ Land Records</a>
+        <a href="/owners">👨‍🌾 Land Owners</a>
+        <a href="/acquisition">📋 Acquisition</a>
+
+        <a href="/compensation" class="active">
+            💰 Compensation
+        </a>
+
+        <a href="#">📄 Documents</a>
+        <a href="#">🗺️ Map</a>
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Add Compensation</h1>
+
+                <p>
+                    Add land compensation and payment details
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <div class="box form-box">
+
+            <form method="POST"
+                  action="/add-compensation">
+
+
+                <label>Land ID</label>
+
+                <input
+                    type="number"
+                    name="land_id"
+                    placeholder="Example: 1"
+                    required
+                >
+
+
+                <label>Market Value (₹)</label>
+
+                <input
+                    type="number"
+                    name="market_value"
+                    placeholder="Example: 500000"
+                    required
+                >
+
+
+                <label>Compensation Amount (₹)</label>
+
+                <input
+                    type="number"
+                    name="compensation_amount"
+                    placeholder="Example: 750000"
+                    required
+                >
+
+
+                <label>Payment Status</label>
+
+                <select name="payment_status" required>
+
+                    <option value="">
+                        Select payment status
+                    </option>
+
+                    <option>Pending</option>
+                    <option>Processing</option>
+                    <option>Paid</option>
+                    <option>Rejected</option>
+
+                </select>
+
+
+                <label>Payment Date</label>
+
+                <input
+                    type="date"
+                    name="payment_date"
+                >
+
+
+                <button type="submit">
+                    Add Compensation
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

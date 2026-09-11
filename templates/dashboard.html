@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BhoomiTrack Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+        <a href="/projects">📁 Projects</a>
+        <a href="/land">🗺️ Land Records</a>
+        <a href="/owners">👨‍🌾 Land Owners</a>
+        <a href="/acquisition">📋 Acquisition</a>
+        <a href="/compensation">💰 Compensation</a>
+        <a href="/documents">📄 Documents</a>
+        <a href="/map">🗺️ Map</a>
+        <a href="/reports">📊 Reports</a>
+
+    </div>
+
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- HEADER -->
+        <div class="header">
+
+            <div>
+                <h1>Dashboard</h1>
+
+                <p>
+                    Real-Time National Land Acquisition
+                    & Management System
+                </p>
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">📁</div>
+
+                <h3>Total Projects</h3>
+
+                <h2>{{ total_projects }}</h2>
+
+                <p>Active projects</p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🌍</div>
+
+                <h3>Total Land</h3>
+
+                <h2>{{ total_land }}</h2>
+
+                <p>Land parcels</p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">✅</div>
+
+                <h3>Acquired</h3>
+
+                <h2>{{ acquired_land }}</h2>
+
+                <p>Completed parcels</p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">⏳</div>
+
+                <h3>Pending</h3>
+
+                <h2>{{ pending_land }}</h2>
+
+                <p>Needs action</p>
+            </div>
+
+        </div>
+
+
+        <!-- CONTENT -->
+        <div class="content-grid">
+
+
+            <!-- ACQUISITION PROGRESS -->
+            <div class="box">
+
+                <h2>Acquisition Progress</h2>
+
+                <div class="progress-item">
+
+                    <div class="progress-title">
+                        <span>Proposal</span>
+                        <b>80%</b>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:80%"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="progress-item">
+
+                    <div class="progress-title">
+                        <span>Survey</span>
+                        <b>70%</b>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:70%"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="progress-item">
+
+                    <div class="progress-title">
+                        <span>Verification</span>
+                        <b>55%</b>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:55%"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="progress-item">
+
+                    <div class="progress-title">
+                        <span>Compensation</span>
+                        <b>40%</b>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:40%"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="progress-item">
+
+                    <div class="progress-title">
+                        <span>Completed</span>
+                        <b>25%</b>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:25%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT PROJECTS -->
+            <div class="box">
+
+                <h2>Recent Projects</h2>
+
+
+                <div class="project">
+
+                    <div>
+                        <strong>Jaipur Ring Road</strong>
+                        <p>Rajasthan</p>
+                    </div>
+
+                    <span>72%</span>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div>
+                        <strong>Delhi Expressway</strong>
+                        <p>Delhi</p>
+                    </div>
+
+                    <span>54%</span>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div>
+                        <strong>Railway Expansion</strong>
+                        <p>Uttar Pradesh</p>
+                    </div>
+
+                    <span>32%</span>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div>
+                        <strong>Solar Energy Park</strong>
+                        <p>Jodhpur</p>
+                    </div>
+
+                    <span>100%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAP -->
+        <div class="box map-box">
+
+            <h2>🗺️ Land Acquisition Map</h2>
+
+            <div class="map">
+
+                <div>
+
+                    <p>🟢 Acquired</p>
+                    <p>🟡 Verification Pending</p>
+                    <p>🔴 Acquisition Pending</p>
+
+                    <br>
+
+                    🟢 &nbsp;&nbsp; 🟡 &nbsp;&nbsp; 🔴
+
+                    <br><br>
+
+                    🟡 &nbsp;&nbsp; 🟢 &nbsp;&nbsp; 🔴
+
+                    <br><br>
+
+                    🟢 &nbsp;&nbsp; 🔴 &nbsp;&nbsp; 🟡
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+acquisition_id,land_id,notification_date,verification_date,approval_date,acquisition_date,current_stage,remarks
+1,1,2026-01-10,2026-02-15,,,Verification,Document verification pending
+2,2,2026-01-15,,,,Notification,Notice issued
+3,3,2026-01-20,2026-02-10,,,Compensation,Compensation calculation
+4,4,2026-02-05,2026-03-01,,,Compensation,Payment processing
+5,5,2026-02-10,,,,Survey,Survey scheduled
+6,6,2026-03-01,,,,Survey,Field survey pending
+7,7,2026-03-05,,,,Notification,Owner notification
+8,8,2025-10-10,2025-11-15,2025-12-20,2026-01-05,Acquired,Land acquired
+9,9,2025-05-10,2025-06-15,2025-07-20,2025-08-10,Handover,Project completed
+10,10,2026-03-10,2026-04-01,,,Verification,Ownership verification

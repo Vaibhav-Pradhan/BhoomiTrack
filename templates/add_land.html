@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Land - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects">📁 Projects</a>
+
+        <a href="/land" class="active">
+            🗺️ Land Records
+        </a>
+
+        <a href="#">👨‍🌾 Land Owners</a>
+        <a href="#">📋 Acquisition</a>
+        <a href="#">💰 Compensation</a>
+        <a href="#">📄 Documents</a>
+        <a href="#">🗺️ Map</a>
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Add Land Record</h1>
+
+                <p>
+                    Add a new land parcel
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="box form-box">
+
+            <form method="POST"
+                  action="/add-land">
+
+                <label>Project ID</label>
+
+                <input
+                    type="number"
+                    name="project_id"
+                    placeholder="Example: 1"
+                    required
+                >
+
+
+                <label>Survey Number</label>
+
+                <input
+                    type="text"
+                    name="survey_number"
+                    placeholder="Example: JPR1001"
+                    required
+                >
+
+
+                <label>Village</label>
+
+                <input
+                    type="text"
+                    name="village"
+                    placeholder="Example: Jagatpura"
+                    required
+                >
+
+
+                <label>District</label>
+
+                <input
+                    type="text"
+                    name="district"
+                    placeholder="Example: Jaipur"
+                    required
+                >
+
+
+                <label>State</label>
+
+                <input
+                    type="text"
+                    name="state"
+                    placeholder="Example: Rajasthan"
+                    required
+                >
+
+
+                <label>Area (Acres)</label>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    name="area"
+                    placeholder="Example: 5.50"
+                    required
+                >
+
+
+                <label>Land Type</label>
+
+                <select name="land_type" required>
+
+                    <option value="">
+                        Select land type
+                    </option>
+
+                    <option>Agricultural</option>
+                    <option>Residential</option>
+                    <option>Commercial</option>
+                    <option>Government</option>
+                    <option>Industrial</option>
+
+                </select>
+
+
+                <label>Latitude</label>
+
+                <input
+                    type="number"
+                    step="any"
+                    name="latitude"
+                    placeholder="Example: 26.8467"
+                    required
+                >
+
+
+                <label>Longitude</label>
+
+                <input
+                    type="number"
+                    step="any"
+                    name="longitude"
+                    placeholder="Example: 75.7873"
+                    required
+                >
+
+
+                <label>Acquisition Status</label>
+
+                <select name="acquisition_status" required>
+
+                    <option>Pending</option>
+                    <option>Verification</option>
+                    <option>Under Review</option>
+                    <option>Acquired</option>
+                    <option>Completed</option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Land
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

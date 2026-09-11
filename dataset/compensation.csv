@@ -1,0 +1,11 @@
+compensation_id,land_id,market_value,compensation_amount,payment_status,payment_date
+1,1,1500000,3000000,Pending,
+2,2,1800000,3600000,Pending,
+3,3,2200000,4400000,Processing,
+4,4,2500000,5000000,Processing,
+5,5,1700000,3400000,Pending,
+6,6,2000000,4000000,Pending,
+7,7,1900000,3800000,Pending,
+8,8,3000000,6000000,Paid,2026-01-10
+9,9,2800000,5600000,Paid,2025-08-20
+10,10,2300000,4600000,Pending,

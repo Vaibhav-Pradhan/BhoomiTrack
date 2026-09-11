@@ -1,0 +1,11 @@
+owner_id,land_id,owner_name,contact,ownership_type,document_status,verification_status
+1,1,Ramesh Kumar,9000000001,Individual,Verified,Verified
+2,2,Suresh Sharma,9000000002,Individual,Verified,Pending
+3,3,Anita Devi,9000000003,Individual,Verified,Verified
+4,4,Mohan Singh,9000000004,Individual,Pending,Pending
+5,5,Sunita Verma,9000000005,Individual,Verified,Verified
+6,6,Rajesh Yadav,9000000006,Individual,Verified,Pending
+7,7,Pooja Singh,9000000007,Individual,Verified,Verified
+8,8,Amit Jain,9000000008,Company,Verified,Verified
+9,9,Vijay Meena,9000000009,Individual,Verified,Verified
+10,10,Neha Gupta,9000000010,Individual,Pending,Pending

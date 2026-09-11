@@ -1,0 +1,9 @@
+project_id,project_name,project_type,state,district,authority,budget,status
+1,Jaipur Ring Road,Highway,Rajasthan,Jaipur,PWD,500000000,In Progress
+2,Delhi Expressway,Highway,Delhi,New Delhi,NHAI,800000000,In Progress
+3,Railway Expansion,Railway,Uttar Pradesh,Lucknow,Indian Railways,650000000,Planning
+4,Solar Energy Park,Renewable Energy,Rajasthan,Jodhpur,Energy Department,400000000,In Progress
+5,Irrigation Project,Irrigation,Rajasthan,Kota,Water Resources,300000000,Completed
+6,Metro Extension,Metro,Rajasthan,Jaipur,Metro Authority,450000000,Planning
+7,Industrial Corridor,Industrial,Maharashtra,Nagpur,Industrial Authority,900000000,In Progress
+8,National Highway Project,Highway,Madhya Pradesh,Indore,NHAI,700000000,In Progress

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Documents - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects">📁 Projects</a>
+
+        <a href="/land">🗺️ Land Records</a>
+
+        <a href="/owners">👨‍🌾 Land Owners</a>
+
+        <a href="/acquisition">📋 Acquisition</a>
+
+        <a href="/compensation">💰 Compensation</a>
+
+        <a href="/documents" class="active">
+            📄 Documents
+        </a>
+
+        <a href="#">🗺️ Map</a>
+
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Documents</h1>
+
+                <p>
+                    Manage land and acquisition documents
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <div class="box">
+
+            <div class="project-header">
+
+                <h2>All Documents</h2>
+
+                <a href="/add-document"
+                   class="add-button">
+
+                    + Add Document
+
+                </a>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Land ID</th>
+                        <th>Document Name</th>
+                        <th>Document Type</th>
+                        <th>Status</th>
+                        <th>Upload Date</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for document in documents %}
+
+                    <tr>
+
+                        <td>
+                            {{ document["document_id"] }}
+                        </td>
+
+                        <td>
+                            {{ document["land_id"] }}
+                        </td>
+
+                        <td>
+                            {{ document["document_name"] }}
+                        </td>
+
+                        <td>
+                            {{ document["document_type"] }}
+                        </td>
+
+                        <td>
+                            {{ document["document_status"] }}
+                        </td>
+
+                        <td>
+                            {{ document["upload_date"] }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

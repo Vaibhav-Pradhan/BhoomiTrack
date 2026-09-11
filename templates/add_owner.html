@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Owner - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects">📁 Projects</a>
+
+        <a href="/land">🗺️ Land Records</a>
+
+        <a href="/owners" class="active">
+            👨‍🌾 Land Owners
+        </a>
+
+        <a href="#">📋 Acquisition</a>
+        <a href="#">💰 Compensation</a>
+        <a href="#">📄 Documents</a>
+        <a href="#">🗺️ Map</a>
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Add Land Owner</h1>
+
+                <p>
+                    Add owner information
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <div class="box form-box">
+
+            <form method="POST"
+                  action="/add-owner">
+
+
+                <label>Land ID</label>
+
+                <input
+                    type="number"
+                    name="land_id"
+                    placeholder="Example: 1"
+                    required
+                >
+
+
+                <label>Owner Name</label>
+
+                <input
+                    type="text"
+                    name="owner_name"
+                    placeholder="Enter owner name"
+                    required
+                >
+
+
+                <label>Contact</label>
+
+                <input
+                    type="text"
+                    name="contact"
+                    placeholder="Enter contact number"
+                    required
+                >
+
+
+                <label>Ownership Type</label>
+
+                <select name="ownership_type" required>
+
+                    <option value="">
+                        Select ownership type
+                    </option>
+
+                    <option>Individual</option>
+                    <option>Joint</option>
+                    <option>Government</option>
+                    <option>Company</option>
+
+                </select>
+
+
+                <label>Document Status</label>
+
+                <select name="document_status" required>
+
+                    <option>Pending</option>
+                    <option>Submitted</option>
+                    <option>Verified</option>
+                    <option>Rejected</option>
+
+                </select>
+
+
+                <label>Verification Status</label>
+
+                <select name="verification_status" required>
+
+                    <option>Pending</option>
+                    <option>Under Verification</option>
+                    <option>Verified</option>
+                    <option>Rejected</option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Owner
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

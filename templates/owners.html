@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Land Owners - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects">📁 Projects</a>
+
+        <a href="/land">🗺️ Land Records</a>
+
+        <a href="/owners" class="active">
+            👨‍🌾 Land Owners
+        </a>
+
+        <a href="#">📋 Acquisition</a>
+        <a href="#">💰 Compensation</a>
+        <a href="#">📄 Documents</a>
+        <a href="#">🗺️ Map</a>
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Land Owners</h1>
+
+                <p>
+                    Manage land ownership records
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <div class="box">
+
+            <div class="project-header">
+
+                <h2>All Land Owners</h2>
+
+                <a href="/add-owner"
+                   class="add-button">
+
+                    + Add Owner
+
+                </a>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Land ID</th>
+                        <th>Owner Name</th>
+                        <th>Contact</th>
+                        <th>Ownership Type</th>
+                        <th>Document Status</th>
+                        <th>Verification</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for owner in owners %}
+
+                    <tr>
+
+                        <td>{{ owner["owner_id"] }}</td>
+
+                        <td>{{ owner["land_id"] }}</td>
+
+                        <td>{{ owner["owner_name"] }}</td>
+
+                        <td>{{ owner["contact"] }}</td>
+
+                        <td>{{ owner["ownership_type"] }}</td>
+
+                        <td>{{ owner["document_status"] }}</td>
+
+                        <td>{{ owner["verification_status"] }}</td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

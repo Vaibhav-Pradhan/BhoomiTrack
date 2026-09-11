@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Compensation - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects">📁 Projects</a>
+
+        <a href="/land">🗺️ Land Records</a>
+
+        <a href="/owners">👨‍🌾 Land Owners</a>
+
+        <a href="/acquisition">📋 Acquisition</a>
+
+        <a href="/compensation" class="active">
+            💰 Compensation
+        </a>
+
+        <a href="#">📄 Documents</a>
+        <a href="#">🗺️ Map</a>
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Compensation</h1>
+
+                <p>
+                    Manage land compensation and payments
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <div class="box">
+
+            <div class="project-header">
+
+                <h2>Compensation Records</h2>
+
+                <a href="/add-compensation"
+                   class="add-button">
+
+                    + Add Compensation
+
+                </a>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Land ID</th>
+                        <th>Market Value</th>
+                        <th>Compensation Amount</th>
+                        <th>Payment Status</th>
+                        <th>Payment Date</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for record in compensation_records %}
+
+                    <tr>
+
+                        <td>
+                            {{ record["compensation_id"] }}
+                        </td>
+
+                        <td>
+                            {{ record["land_id"] }}
+                        </td>
+
+                        <td>
+                            ₹{{ record["market_value"] }}
+                        </td>
+
+                        <td>
+                            ₹{{ record["compensation_amount"] }}
+                        </td>
+
+                        <td>
+                            {{ record["payment_status"] }}
+                        </td>
+
+                        <td>
+                            {{ record["payment_date"] }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

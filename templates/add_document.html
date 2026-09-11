@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Document - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+        <a href="/projects">📁 Projects</a>
+        <a href="/land">🗺️ Land Records</a>
+        <a href="/owners">👨‍🌾 Land Owners</a>
+        <a href="/acquisition">📋 Acquisition</a>
+        <a href="/compensation">💰 Compensation</a>
+
+        <a href="/documents" class="active">
+            📄 Documents
+        </a>
+
+        <a href="#">🗺️ Map</a>
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Add Document</h1>
+
+                <p>
+                    Add document information
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <div class="box form-box">
+
+            <form method="POST"
+                  action="/add-document">
+
+
+                <label>Land ID</label>
+
+                <input
+                    type="number"
+                    name="land_id"
+                    placeholder="Example: 1"
+                    required
+                >
+
+
+                <label>Document Name</label>
+
+                <input
+                    type="text"
+                    name="document_name"
+                    placeholder="Example: Sale Deed"
+                    required
+                >
+
+
+                <label>Document Type</label>
+
+                <select name="document_type" required>
+
+                    <option value="">
+                        Select document type
+                    </option>
+
+                    <option>Sale Deed</option>
+                    <option>Land Record</option>
+                    <option>Ownership Proof</option>
+                    <option>Identity Proof</option>
+                    <option>Acquisition Notice</option>
+                    <option>Compensation Document</option>
+
+                </select>
+
+
+                <label>Document Status</label>
+
+                <select name="document_status" required>
+
+                    <option>Pending</option>
+                    <option>Submitted</option>
+                    <option>Under Verification</option>
+                    <option>Verified</option>
+                    <option>Rejected</option>
+
+                </select>
+
+
+                <label>Upload Date</label>
+
+                <input
+                    type="date"
+                    name="upload_date"
+                    required
+                >
+
+
+                <button type="submit">
+                    Add Document
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

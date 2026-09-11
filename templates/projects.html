@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BhoomiTrack - Projects</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">
+            🏠 Dashboard
+        </a>
+
+        <a href="/projects" class="active">
+            📁 Projects
+        </a>
+
+        <a href="#">
+            🗺️ Land Records
+        </a>
+
+        <a href="#">
+            👨‍🌾 Land Owners
+        </a>
+
+        <a href="#">
+            📋 Acquisition
+        </a>
+
+        <a href="#">
+            💰 Compensation
+        </a>
+
+        <a href="#">
+            📄 Documents
+        </a>
+
+        <a href="#">
+            🗺️ Map
+        </a>
+
+        <a href="#">
+            📊 Reports
+        </a>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Projects</h1>
+
+                <p>
+                    Manage all land acquisition projects
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <!-- PROJECTS -->
+
+        <div class="box">
+
+            <div class="project-header">
+
+                <h2>All Projects</h2>
+
+                <a href="/add-project"
+                   class="add-button">
+
+                    + Add Project
+
+                </a>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Project Name</th>
+
+                        <th>Type</th>
+
+                        <th>State</th>
+
+                        <th>District</th>
+
+                        <th>Authority</th>
+
+                        <th>Budget</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for project in projects %}
+
+                    <tr>
+
+                        <td>
+                            {{ project["project_id"] }}
+                        </td>
+
+                        <td>
+                            {{ project["project_name"] }}
+                        </td>
+
+                        <td>
+                            {{ project["project_type"] }}
+                        </td>
+
+                        <td>
+                            {{ project["state"] }}
+                        </td>
+
+                        <td>
+                            {{ project["district"] }}
+                        </td>
+
+                        <td>
+                            {{ project["authority"] }}
+                        </td>
+
+                        <td>
+                            ₹{{ project["budget"] }}
+                        </td>
+
+                        <td>
+                            {{ project["status"] }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

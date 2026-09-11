@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Land Records - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">
+            🏠 Dashboard
+        </a>
+
+        <a href="/projects">
+            📁 Projects
+        </a>
+
+        <a href="/land" class="active">
+            🗺️ Land Records
+        </a>
+
+        <a href="#">
+            👨‍🌾 Land Owners
+        </a>
+
+        <a href="#">
+            📋 Acquisition
+        </a>
+
+        <a href="#">
+            💰 Compensation
+        </a>
+
+        <a href="#">
+            📄 Documents
+        </a>
+
+        <a href="#">
+            🗺️ Map
+        </a>
+
+        <a href="#">
+            📊 Reports
+        </a>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Land Records</h1>
+
+                <p>
+                    Manage land parcels and acquisition records
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <!-- LAND TABLE -->
+
+        <div class="box">
+
+            <div class="project-header">
+
+            <h2>All Land Records</h2>
+
+            <a href="/add-land" class="add-button">
+              + Add Land
+            </a>
+
+        </div>
+
+
+    <!-- SEARCH FORM -->
+
+    <form method="GET" action="/land">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="🔎 Search village, district, survey number..."
+            value="{{ search }}"
+            style="width: 60%; padding: 12px;"
+        >
+
+        <button type="submit">
+            Search
+        </button>
+
+        <a href="/land">
+            Clear
+        </a>
+
+    </form>
+
+    <br>
+
+
+    <!-- TABLE -->
+
+    <table>
+
+        <thead>
+            ...
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Project ID</th>
+                        <th>Survey No.</th>
+                        <th>Village</th>
+                        <th>District</th>
+                        <th>State</th>
+                        <th>Area</th>
+                        <th>Land Type</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for land in land_records %}
+
+                    <tr>
+
+                        <td>
+                            {{ land["land_id"] }}
+                        </td>
+
+                        <td>
+                            {{ land["project_id"] }}
+                        </td>
+
+                        <td>
+                            {{ land["survey_number"] }}
+                        </td>
+
+                        <td>
+                            {{ land["village"] }}
+                        </td>
+
+                        <td>
+                            {{ land["district"] }}
+                        </td>
+
+                        <td>
+                            {{ land["state"] }}
+                        </td>
+
+                        <td>
+                            {{ land["area"] }} acres
+                        </td>
+
+                        <td>
+                            {{ land["land_type"] }}
+                        </td>
+
+                        <td>
+                            {{ land["acquisition_status"] }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

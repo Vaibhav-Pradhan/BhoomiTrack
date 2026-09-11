@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Acquisition - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects">📁 Projects</a>
+
+        <a href="/land">🗺️ Land Records</a>
+
+        <a href="/owners">👨‍🌾 Land Owners</a>
+
+        <a href="/acquisition" class="active">
+            📋 Acquisition
+        </a>
+
+        <a href="/compensation">
+            💰 Compensation
+        </a>
+
+        <a href="/documents">
+            📄 Documents
+        </a>
+
+        <a href="/map">
+            🗺️ Map
+        </a>
+
+        <a href="/reports">
+            📊 Reports
+        </a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Land Acquisition</h1>
+
+                <p>
+                    Track land acquisition process
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <div class="box">
+
+            <h2>📋 Acquisition Records</h2>
+
+            <br>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Land ID</th>
+                        <th>Notification Date</th>
+                        <th>Verification Date</th>
+                        <th>Approval Date</th>
+                        <th>Acquisition Date</th>
+                        <th>Current Stage</th>
+                        <th>Remarks</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for record in acquisition_records %}
+
+                    <tr>
+
+                        <td>
+                            {{ record["acquisition_id"] }}
+                        </td>
+
+                        <td>
+                            {{ record["land_id"] }}
+                        </td>
+
+                        <td>
+                            {{ record["notification_date"] }}
+                        </td>
+
+                        <td>
+                            {{ record["verification_date"] }}
+                        </td>
+
+                        <td>
+                            {{ record["approval_date"] }}
+                        </td>
+
+                        <td>
+                            {{ record["acquisition_date"] }}
+                        </td>
+
+                        <td>
+                            {{ record["current_stage"] }}
+                        </td>
+
+                        <td>
+                            {{ record["remarks"] }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

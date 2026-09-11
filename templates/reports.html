@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Reports - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects">📁 Projects</a>
+
+        <a href="/land">🗺️ Land Records</a>
+
+        <a href="/owners">👨‍🌾 Land Owners</a>
+
+        <a href="/acquisition">📋 Acquisition</a>
+
+        <a href="/compensation">💰 Compensation</a>
+
+        <a href="/documents">📄 Documents</a>
+
+        <a href="/map">🗺️ Map</a>
+
+        <a href="/reports" class="active">
+            📊 Reports
+        </a>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Reports & Analytics</h1>
+
+                <p>
+                    BhoomiTrack land acquisition analysis
+                </p>
+
+            </div>
+
+            <div class="admin">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">📁</div>
+
+                <h3>Total Projects</h3>
+
+                <h2>{{ total_projects }}</h2>
+
+                <p>Registered projects</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🌍</div>
+
+                <h3>Total Land</h3>
+
+                <h2>{{ total_land }}</h2>
+
+                <p>Land parcels</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">✅</div>
+
+                <h3>Acquired</h3>
+
+                <h2>{{ acquired_land }}</h2>
+
+                <p>Acquired parcels</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">⏳</div>
+
+                <h3>Pending</h3>
+
+                <h2>{{ pending_land }}</h2>
+
+                <p>Pending parcels</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHARTS -->
+
+        <div class="content-grid">
+
+
+            <!-- ACQUISITION CHART -->
+
+            <div class="box">
+
+                <h2>Acquisition Status</h2>
+
+                <canvas id="acquisitionChart"></canvas>
+
+            </div>
+
+
+            <!-- LAND TYPE CHART -->
+
+            <div class="box">
+
+                <h2>Land Type Distribution</h2>
+
+                <canvas id="landTypeChart"></canvas>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        // =====================================
+        // ACQUISITION CHART
+        // =====================================
+
+        const acquisitionChart =
+            document.getElementById("acquisitionChart");
+
+
+        new Chart(acquisitionChart, {
+
+            type: "doughnut",
+
+            data: {
+
+                labels: [
+                    "Acquired",
+                    "Pending"
+                ],
+
+                datasets: [{
+
+                    data: [
+                        {{ acquired_land }},
+                        {{ pending_land }}
+                    ]
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true
+
+            }
+
+        });
+
+
+
+        // =====================================
+        // LAND TYPE DATA
+        // =====================================
+
+        const landTypeLabels = [
+
+            {% for land in land_types %}
+
+            "{{ land['land_type'] }}",
+
+            {% endfor %}
+
+        ];
+
+
+        const landTypeValues = [
+
+            {% for land in land_types %}
+
+            {{ land['total'] }},
+
+            {% endfor %}
+
+        ];
+
+
+
+        // =====================================
+        // LAND TYPE CHART
+        // =====================================
+
+        const landTypeChart =
+            document.getElementById("landTypeChart");
+
+
+        new Chart(landTypeChart, {
+
+            type: "bar",
+
+            data: {
+
+                labels: landTypeLabels,
+
+                datasets: [{
+
+                    label: "Number of Land Parcels",
+
+                    data: landTypeValues
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

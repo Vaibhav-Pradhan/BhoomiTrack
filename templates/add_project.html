@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Project - BhoomiTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🌱 BhoomiTrack</h2>
+
+        <p class="side-title">
+            Land Management
+        </p>
+
+        <a href="/">🏠 Dashboard</a>
+
+        <a href="/projects" class="active">
+            📁 Projects
+        </a>
+
+        <a href="#">🗺️ Land Records</a>
+        <a href="#">👨‍🌾 Land Owners</a>
+        <a href="#">📋 Acquisition</a>
+        <a href="#">💰 Compensation</a>
+        <a href="#">📄 Documents</a>
+        <a href="#">🗺️ Map</a>
+        <a href="#">📊 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Add New Project</h1>
+
+                <p>
+                    Create a new land acquisition project
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="box form-box">
+
+            <form method="POST"
+                  action="/add-project">
+
+                <label>Project Name</label>
+
+                <input
+                    type="text"
+                    name="project_name"
+                    placeholder="Example: Jaipur Ring Road"
+                    required
+                >
+
+
+                <label>Project Type</label>
+
+                <select name="project_type" required>
+
+                    <option value="">
+                        Select project type
+                    </option>
+
+                    <option>Highway</option>
+                    <option>Railway</option>
+                    <option>Metro</option>
+                    <option>Irrigation</option>
+                    <option>Renewable Energy</option>
+                    <option>Industrial</option>
+
+                </select>
+
+
+                <label>State</label>
+
+                <input
+                    type="text"
+                    name="state"
+                    placeholder="Example: Rajasthan"
+                    required
+                >
+
+
+                <label>District</label>
+
+                <input
+                    type="text"
+                    name="district"
+                    placeholder="Example: Jaipur"
+                    required
+                >
+
+
+                <label>Authority</label>
+
+                <input
+                    type="text"
+                    name="authority"
+                    placeholder="Example: PWD"
+                    required
+                >
+
+
+                <label>Budget</label>
+
+                <input
+                    type="number"
+                    name="budget"
+                    placeholder="Example: 500000000"
+                    required
+                >
+
+
+                <label>Status</label>
+
+                <select name="status" required>
+
+                    <option>Planning</option>
+                    <option>In Progress</option>
+                    <option>Completed</option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Project
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

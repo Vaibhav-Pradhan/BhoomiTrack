@@ -1,0 +1,11 @@
+land_id,project_id,survey_number,village,district,state,area,land_type,latitude,longitude,acquisition_status
+1,1,JPR1001,Bagru,Jaipur,Rajasthan,2.5,Agricultural,26.819,75.654,Verification
+2,1,JPR1002,Bagru,Jaipur,Rajasthan,3.2,Agricultural,26.821,75.658,Notification
+3,1,JPR1003,Mahapura,Jaipur,Rajasthan,1.8,Residential,26.835,75.690,Compensation
+4,2,DEL2001,Alipur,New Delhi,Delhi,1.8,Residential,28.805,77.133,Compensation
+5,2,DEL2002,Narela,New Delhi,Delhi,4.1,Agricultural,28.852,77.092,Survey
+6,3,UP3001,Lucknow Rural,Lucknow,Uttar Pradesh,4.5,Agricultural,26.850,80.950,Survey
+7,3,UP3002,Mohan,Lucknow,Uttar Pradesh,2.7,Agricultural,26.780,80.870,Notification
+8,4,RAJ4001,Osian,Jodhpur,Rajasthan,6.2,Barren,26.720,72.950,Acquired
+9,5,RAJ5001,Kota Rural,Kota,Rajasthan,3.5,Agricultural,25.180,75.850,Completed
+10,6,JPR6001,Jagatpura,Jaipur,Rajasthan,2.1,Residential,26.850,75.850,Verification
