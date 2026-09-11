@@ -2,10 +2,10 @@ from flask import Flask, render_template, request, redirect
 import sqlite3
 import pandas as pd
 import os
+
+app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, "database.db")
-app = Flask(__name__)
-
 def get_db_connection():
     connection = sqlite3.connect(DATABASE)
     connection.row_factory = sqlite3.Row
@@ -118,7 +118,7 @@ def create_database():
 # Import CSV data
 def import_csv_data():
 
-    connection = sqlite3.connect("database.db")
+    connection = sqlite3.connect(DATABASE)
 
 
     csv_files = {
