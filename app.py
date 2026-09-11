@@ -629,7 +629,19 @@ def land_map():
 # =========================================================
 # REPORTS & ANALYTICS
 # =========================================================
-
+@app.route("/google-verification")
+def google_verification():
+    return """
+    <html>
+    <head>
+        <meta name="google-site-verification"
+              content="WktsyOIAtDqHp70E0NFhqdMfGkNqXpIowYojAIqEG4k">
+    </head>
+    <body>
+        BhoomiTrack Google Verification
+    </body>
+    </html>
+    """
 @app.route("/reports")
 def reports():
 
@@ -683,8 +695,42 @@ def reports():
         land_types=land_types
     )
 
-create_database()
-import_csv_data()
+@app.route("/sitemap.xml")
+def sitemap():
+    return """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://bhoomitrack.onrender.com/</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/projects</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/land</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/owners</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/acquisition</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/compensation</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/documents</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/map</loc>
+    </url>
+    <url>
+        <loc>https://bhoomitrack.onrender.com/reports</loc>
+    </url>
+</urlset>"""
 
+
+# Start Flask
 if __name__ == "__main__":
+    create_database()
+    import_csv_data()
     app.run(debug=True)
