@@ -2,23 +2,19 @@ from flask import Flask, render_template, request, redirect
 import sqlite3
 import pandas as pd
 import os
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "database.db")
 app = Flask(__name__)
 
-
-# Database connection
 def get_db_connection():
-    connection = sqlite3.connect("database.db")
-
+    connection = sqlite3.connect(DATABASE)
     connection.row_factory = sqlite3.Row
-
     return connection
-
 
 # Create database tables
 def create_database():
 
-    connection = sqlite3.connect("database.db")
+    connection = sqlite3.connect(DATABASE)
 
     cursor = connection.cursor()
 
@@ -728,9 +724,11 @@ def sitemap():
     </url>
 </urlset>"""
 
+# Create database when application starts
+create_database()
+import_csv_data()
+
 
 # Start Flask
 if __name__ == "__main__":
-    create_database()
-    import_csv_data()
     app.run(debug=True)
